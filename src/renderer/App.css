@@ -96,6 +96,13 @@
     scroll-behavior: smooth;
   }
 }
+.clickable {
+  cursor: pointer;
+}
+.logincard {
+  margin: auto;
+  width: 50%;
+}
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -104,7 +111,7 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
+  background-color: rgb(24, 75, 95);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
 }

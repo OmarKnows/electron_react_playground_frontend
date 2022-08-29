@@ -1,12 +1,12 @@
 import React from 'react';
 import { Card, Form, Row, Col, Button } from 'react-bootstrap';
-import logo from '../../assets/icon.png';
+import logo from '../../assets/logo.png';
 
 const LoginScreen = () => {
   return (
     <div>
       <div className="logincard">
-        <Card className="p-3 mt-5">
+        <Card className="p-3 mt-3">
           <div>
             <img className="rounded mx-auto d-block" src={logo} alt="logo" />
           </div>
