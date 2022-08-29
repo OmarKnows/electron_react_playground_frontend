@@ -5,11 +5,13 @@ import RegisterScreen from 'screens/RegisterScreen';
 import SearchScreen from 'screens/SearchScreen';
 import LogScreen from 'screens/LogScreen';
 import DocScreen from 'screens/DocScreen';
+import Header from 'components/Header';
 import './App.css';
 
 export default function App() {
   return (
     <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/login" element={<LoginScreen />} />
