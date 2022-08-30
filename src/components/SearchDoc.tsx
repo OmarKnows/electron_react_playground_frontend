@@ -4,11 +4,17 @@ import DocTable from './DocTable';
 
 const SearchDoc: React.FC = () => {
   const [imp, setImp] = useState(true);
+  const [docNum, setDocNum] = useState('');
   return (
     <Form>
       <Form.Group className="text-right">
         <Form.Label>رقم المكاتبة</Form.Label>
-        <Form.Control className="text-right" type="number" />
+        <Form.Control
+          className="text-right"
+          type="number"
+          value={docNum}
+          onChange={(e) => setDocNum(e.target.value)}
+        />
       </Form.Group>
       <Form.Group className="my-3">
         <div key="inline-radio">
