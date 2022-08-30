@@ -1,15 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
-import { Button, Table } from 'react-bootstrap';
+import { Button, Container, Table } from 'react-bootstrap';
 import ConfirmSend from './ConfirmSend';
 import ConfirmDelete from './ConfirmDelete';
 
 interface Props {
-  incoming: boolean;
+  docType: number;
 }
 
-const DocTable: React.FC<Props> = ({ incoming }) => {
+const DocTable: React.FC<Props> = ({ docType }) => {
   const [confirm, setConfirm] = useState(false);
   const [del, setDel] = useState(false);
 
@@ -19,13 +19,20 @@ const DocTable: React.FC<Props> = ({ incoming }) => {
   const showDelete = () => setDel(true);
 
   return (
-    <div>
+    <Container className="">
       {true ? (
         <Table className="table table-hover ">
           <thead>
             <tr>
-              <th aria-label="delete button" scope="col" />
-              <th aria-label="control buttons" scope="col" />
+              {docType === 3 ? (
+                <>
+                  <th aria-label="control buttons" scope="col" />
+                  <th scope="col">التاريخ</th>
+                </>
+              ) : (
+                <th aria-label="control buttons" scope="col" />
+              )}
+
               <th scope="col">الملخص</th>
               <th scope="col">اسم المكاتبة</th>
               <th scope="col">م</th>
@@ -33,16 +40,19 @@ const DocTable: React.FC<Props> = ({ incoming }) => {
           </thead>
           <tbody>
             <tr>
-              <td>
-                <FontAwesomeIcon
-                  className="clickable m-3"
-                  color="red"
-                  icon={faXmark}
-                  onClick={showDelete}
-                />
-              </td>
-              <td>
-                {incoming ? (
+              <td style={{ width: '40%' }}>
+                {docType !== 3 ? (
+                  <FontAwesomeIcon
+                    style={{ verticalAlign: 'middle' }}
+                    className="clickable m-3 fa-2x"
+                    color="red"
+                    icon={faXmark}
+                    onClick={showDelete}
+                  />
+                ) : (
+                  <></>
+                )}
+                {docType !== 2 ? (
                   <Button
                     className="mx-1"
                     variant="success"
@@ -57,7 +67,7 @@ const DocTable: React.FC<Props> = ({ incoming }) => {
                 <Button className="mx-1" variant="info">
                   عرض
                 </Button>
-                {incoming ? (
+                {docType === 1 ? (
                   <Button className="mx-1" variant="warning">
                     التوقيع
                   </Button>
@@ -65,15 +75,17 @@ const DocTable: React.FC<Props> = ({ incoming }) => {
                   <></>
                 )}
               </td>
-              <td>summary</td>
-              <td>orgname</td>
-              <td>number</td>
+              {docType === 3 ? <td>date</td> : <></>}
+
+              <td style={{ width: '30%' }}>summary</td>
+              <td style={{ width: '30%' }}>orgname</td>
+              <td style={{ width: '10%' }}>number</td>
             </tr>
           </tbody>
         </Table>
       ) : (
         <>
-          {incoming ? (
+          {docType === 1 ? (
             <h4>لا يوجد مكاتبات جديدة</h4>
           ) : (
             <h4>لم يرسل مكاتبات بعد</h4>
@@ -82,7 +94,7 @@ const DocTable: React.FC<Props> = ({ incoming }) => {
       )}
       <ConfirmSend show={confirm} handleClose={closeConfirm} />
       <ConfirmDelete show={del} handleClose={closeDelete} />
-    </div>
+    </Container>
   );
 };
 

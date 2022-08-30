@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faFileCirclePlus,
   faArrowRightFromBracket,
   faUserPlus,
   faHouse,
@@ -70,25 +69,6 @@ const Header: React.FC = () => {
               </Row>
               <Row>
                 <h6>تسجيل</h6>
-              </Row>
-            </Col>
-
-            <Col
-              onClick={() => {
-                navigate('/search');
-              }}
-            >
-              <Row>
-                <span className="text-center">
-                  <FontAwesomeIcon
-                    className="clickable"
-                    color="green"
-                    icon={faFileCirclePlus}
-                  />
-                </span>
-              </Row>
-              <Row>
-                <h6>إضافة</h6>
               </Row>
             </Col>
 
