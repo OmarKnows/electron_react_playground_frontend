@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Card, Form } from 'react-bootstrap';
 
-const RegisterScreen = () => {
+const RegisterScreen: React.FC = () => {
   return (
     <div>
       <h1 className="mt-5 text-center title">تسجيل حساب</h1>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Form, Row, Col, Button } from 'react-bootstrap';
 import logo from '../../assets/logo.png';
 
-const LoginScreen = () => {
+const LoginScreen: React.FC = () => {
   return (
     <div>
       <div className="formCard">

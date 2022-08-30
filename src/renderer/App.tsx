@@ -8,7 +8,7 @@ import DocScreen from 'screens/DocScreen';
 import Header from 'components/Header';
 import './App.css';
 
-export default function App() {
+const App: React.FC = () => {
   return (
     <Router>
       <Header />
@@ -22,4 +22,6 @@ export default function App() {
       </Routes>
     </Router>
   );
-}
+};
+
+export default App;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SearchScreen = () => {
+const SearchScreen: React.FC = () => {
   return <div>SearchScreen</div>;
 };
 

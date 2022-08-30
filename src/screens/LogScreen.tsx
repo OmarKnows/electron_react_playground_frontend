@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Container, Table } from 'react-bootstrap';
 
-const LogScreen = () => {
+const LogScreen: React.FC = () => {
   return (
     <Container className="text-center">
       <h1 className=" my-5 title">Monitoring Logs</h1>
