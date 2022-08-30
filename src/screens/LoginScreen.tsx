@@ -5,7 +5,7 @@ import logo from '../../assets/logo.png';
 const LoginScreen = () => {
   return (
     <div>
-      <div className="logincard">
+      <div className="formCard">
         <Card className="p-3 mt-3">
           <div>
             <img className="rounded mx-auto d-block" src={logo} alt="logo" />

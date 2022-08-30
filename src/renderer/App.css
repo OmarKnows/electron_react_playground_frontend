@@ -99,9 +99,17 @@
 .clickable {
   cursor: pointer;
 }
-.logincard {
+.formCard {
   margin: auto;
   width: 50%;
+}
+.mainTitle {
+  color: rgb(24, 75, 95) !important;
+}
+
+.title {
+  color: white !important;
+  text-shadow: 2px 2px 4px #000000;
 }
 body {
   margin: 0;
