@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Button, Card, Container, Form } from 'react-bootstrap';
-import DocTable from './DocTable';
+import React, { useState } from "react";
+import { Button, Container, Form } from "react-bootstrap";
+import DocTable from "./DocTable";
 
 const SearchDoc: React.FC = () => {
   const [imp, setImp] = useState(true);
-  const [docNum, setDocNum] = useState('');
+  const [docNum, setDocNum] = useState("");
   return (
     <Form>
       <Form.Group className="text-right">
@@ -39,11 +39,9 @@ const SearchDoc: React.FC = () => {
       <Button className="w-50" color="info">
         بحث
       </Button>
-      <Card className="p-3 my-3">
-        <Container>
-          <DocTable docType={3} />
-        </Container>
-      </Card>
+      <Container className="p-3 my-3">
+        <DocTable docType={3} content={[]} isLoading={false} />
+      </Container>
     </Form>
   );
 };
